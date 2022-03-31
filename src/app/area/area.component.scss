@@ -1,0 +1,67 @@
+
+.area{
+    width: 30%;
+    // border: 0.3em solid black;
+}
+.buttons{
+    display: flex;
+    justify-content: space-evenly;
+    width: 90%;
+}
+.button{
+ margin: 10px 0;
+}
+.restart{
+    position: absolute;
+    left: 35%;
+}
+.game{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+}
+
+p{
+    margin: 0;
+}
+
+.store{
+    display: none;
+}
+.block{
+   //border: 0.05em solid #545f97;
+   box-sizing: border-box;
+}
+
+.isSnake{
+    border: 0.05em solid #545f97;
+}
+
+.snakeIcon{
+    width: 50px;
+    margin-top: 1%;
+}
+
+@media only screen and (max-device-width: 480px) {
+    .area{
+        width: 90%;
+    }
+
+    .snakeIcon{
+        width: 50px;
+        margin-top: 15%;
+    }
+
+    .restart{
+        position: absolute;
+        left: 5%;
+    }
+    .store{
+        display: flex;
+    }
+    }
+// ::ng-deep .mat-grid-tile{
+//     padding-top: calc((10% - 0px) * 1 + 0px) !important;
+//     width: calc((10% - 0px) * 1 + 0px) !important;
+// }

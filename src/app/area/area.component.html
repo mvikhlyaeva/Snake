@@ -1,0 +1,26 @@
+<div class = "game" (keyup.arrowup)='up()' (keyup.arrowdown)='down()' 
+                    (keyup.arrowright)='right()' (keyup.arrowleft)='left()' >
+    <img class = "snakeIcon" src="/assets/image/icon-snake.png">
+    <h1> Snake </h1>
+
+    <h2 class = "store" [style.visibility] = "state != 0 ? 'visible' : 'hidden'">Store: {{store}}</h2>
+
+    <div class = "buttons">
+        <button [style.visibility] = "state == 2 || state == 1 ? 'visible' : 'hidden'"   
+            class = "button restart" mat-stroked-button (click)="state = 0"> 
+            <mat-icon>cached</mat-icon>
+        </button>   
+        <button  class = "button" mat-stroked-button  (click)="onchangeState()">
+           <p width = "100%" *ngIf = "state == 0">Start</p> 
+           <p width = "100%" *ngIf = "state == 3">Restart</p> 
+           <mat-icon *ngIf = "state == 1">pause</mat-icon>
+           <mat-icon *ngIf = "state == 2">play_arrow</mat-icon>
+        </button> 
+    </div>
+    <div class = "area">   
+        <mat-grid-list cols="10" rowHeight="1:1">
+            <mat-grid-tile [style.backgroundColor]="getBackgroundColor(i)" 
+                 *ngFor="let i of areaArr" [class.isSnake]="i>0" ></mat-grid-tile>
+        </mat-grid-list>
+    </div> 
+</div>
